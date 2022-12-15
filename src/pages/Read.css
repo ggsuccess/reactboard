@@ -1,0 +1,44 @@
+body,
+ul,
+li,
+h1 {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.cell th {
+  background: linear-gradient(gray, 20%, rgb(90, 249, 249));
+}
+/* table {
+  table-layout: fixed;
+} */
+.con {
+  margin: auto;
+  padding: auto;
+  max-width: 950px;
+}
+.cell {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  width: 80%;
+  height: 40%;
+  margin: auto;
+  padding: auto;
+  box-sizing: border-box;
+}
+html,
+body {
+  overflow-x: hidden;
+}
+
+.article-body {
+  height: 40%;
+  size: 30%;
+  background-color: antiquewhite;
+}
+
+.tfootBtn {
+  float: right;
+  display: inline;
+  margin-right: 11%;
+  margin-left: 15%;
+}

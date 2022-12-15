@@ -1,0 +1,30 @@
+.boardList {
+  font-family: monospace;
+  text-align: center;
+}
+/* table {
+    border: 1px solid black;
+    margin-left: auto;
+    margin-right: auto;
+} */
+th {
+  border: 1px solid black;
+}
+.boardTable {
+  width: 70%;
+  border: 1px solid rgb(241, 172, 23);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+}
+.boardTableThead {
+  color: blue;
+  background-color: darkgrey;
+}
+.boardListTr:hover {
+  background-color: rgba(162, 248, 247, 0.595);
+}
+.boardTitle:hover {
+  font-weight: bold;
+  text-decoration: underline;
+}
