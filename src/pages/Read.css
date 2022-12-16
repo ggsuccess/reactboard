@@ -7,7 +7,6 @@ h1 {
   list-style: none;
 }
 .cell th {
-  background: linear-gradient(gray, 20%, rgb(90, 249, 249));
 }
 /* table {
   table-layout: fixed;

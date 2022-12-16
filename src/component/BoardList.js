@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './BoardList.css';
 
-const BoardList = ({ data }) => {
+const BoardList = ({ data, currentPage }) => {
   // 상위 컴포넌트로부터 props.data(게시글목록)을 받음
   // console.log(data)
   // const { boardNo, category, title, description, author, date } = props.data;
@@ -40,6 +40,7 @@ const BoardList = ({ data }) => {
                     title: item.title,
                     description: item.description,
                     author: item.author,
+                    currentPage: currentPage,
                   }}
                 >
                   <td>{item.title}</td>

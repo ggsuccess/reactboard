@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Header from '../component/Header';
 import BoardList from '../component/BoardList';
@@ -9,6 +9,10 @@ import './Page.css';
 // import Pages from '../component/Pages';
 
 const Home = () => {
+  const location = useLocation();
+  const state = location.state;
+  // console.log(state);
+
   const [searching, setsearching] = useState(false); // 검색중인지 아닌지 가를 논리값 스테이트
   const [searchData, setSearchData] = useState([]); // 게시글 중 검색된 단어로 필터링된 게시글들을 담을 스테이트
   const [search, setSearch] = useState({
@@ -20,6 +24,9 @@ const Home = () => {
   const [currentPage, setCurrentPage] = useState(1); // 전체 페이지 중 현재 페이지에 대한 정보
   // const [page, setPage] = useState(1);
   const [postsPerPage] = useState(10); // 한 페이지당 보여줄 게시글 수
+  // if (state) {
+  //   setCurrentPage(state);
+  // }
   useEffect(() => {
     axios
       .get('/boardlist') // /boardlist로 api요청
@@ -148,10 +155,10 @@ const Home = () => {
         searchData.length === 0 ? ( // 검색결과가 없을때
           <h4 style={{ textAlign: 'center' }}>검색결과가 없습니다</h4> // 검색결과가 없음을 알림
         ) : (
-          <BoardList data={currentSearchPosts} /> //검색결과가 존재할경우 게시글을 BoardList컴포넌트에 전달
+          <BoardList data={currentSearchPosts} currentPage={currentPage} /> //검색결과가 존재할경우 게시글을 BoardList컴포넌트에 전달
         )
       ) : (
-        <BoardList data={currentPosts} /> // 검색하지않았을 경우 전체 게시글을 BoardList컴포넌트에 전달
+        <BoardList data={currentPosts} currentPage={currentPage} /> // 검색하지않았을 경우 전체 게시글을 BoardList컴포넌트에 전달
       )}
       <div style={{ textAlign: 'center' }}>
         <select onChange={setFilterCategory}>

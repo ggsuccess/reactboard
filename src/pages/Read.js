@@ -18,9 +18,9 @@ const Read = () => {
       .catch((err) => console.log(err));
     navigate('/'); //삭제후 홈으로 이동
   };
-  const updateBoard = (data) => {
+  const updateBoard = (item) => {
     //게시글 업데이트
-    navigate('/update', { state: data }); // 해당 게시글 정보를 가지고 /update페이지로 이동
+    navigate('/update', { state: item }); // 해당 게시글 정보를 가지고 /update페이지로 이동
   };
   // const boardlist = () => {
   //   navigate('/');
@@ -70,7 +70,10 @@ const Read = () => {
               <button className="tfootBtn" onClick={() => updateBoard(state)}>
                 글 수정하기
               </button>
-              <button className="tfootBtn" onClick={() => navigate('/')}>
+              <button
+                className="tfootBtn"
+                onClick={() => navigate('/', { state: state.currentPage })}
+              >
                 글 목록보기
               </button>
             </div>
