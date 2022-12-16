@@ -175,7 +175,7 @@ const Home = () => {
           onKeyUp={enterKey}
         ></input>
         <button onClick={onSearch}>검색</button>
-        <button onClick={entireBoardList}>목록보기</button>
+        <button onClick={entireBoardList}>전체 글 목록보기</button>
       </div>
       {searching ? ( // 검색했을때
         <Pagination //Pagination 컴포넌트에
