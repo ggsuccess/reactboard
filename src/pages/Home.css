@@ -13,12 +13,23 @@
   margin-left: -202px;
 }
 .writeBtn:hover {
-  background-color: rgb(0, 128, 255);
   cursor: pointer;
   color: white;
+  background-color: rgb(202 203 205) !important;
+  color: #333;
+}
+.searchCategory {
+  margin: 4px;
+  height: 25px;
+}
+.searchSelect {
+  height: 25px;
+  margin: 4px;
 }
 .searchInput {
-  border-radius: 7px;
+  width: 300px;
+  margin-right: 2px;
+  /* border-radius: 7px; */
 }
 ul {
   list-style: none;

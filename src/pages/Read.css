@@ -6,8 +6,8 @@ h1 {
   padding: 0;
   list-style: none;
 }
-.cell th {
-}
+/* .cell th {
+} */
 /* table {
   table-layout: fixed;
 } */
@@ -30,9 +30,9 @@ body {
 }
 
 .article-body {
-  height: 40%;
+  height: 3.5rem;
   size: 30%;
-  background-color: antiquewhite;
+  background-color: rgb(244, 233, 219);
 }
 
 .tfootBtn {

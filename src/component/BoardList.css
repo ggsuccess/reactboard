@@ -10,7 +10,7 @@ th {
 }
 .boardTable {
   width: 70%;
-  border: 1px solid rgb(241, 172, 23);
+  border: 1px solid rgb(198, 195, 189);
   margin-left: auto;
   margin-right: auto;
   margin-top: 10px;
@@ -19,8 +19,11 @@ th {
   border: none;
   border-bottom: 1px solid lightslategray;
 }
+.boardListTr {
+  border-bottom: 1px solid rgb(190, 190, 190);
+}
 .boardListTr:hover {
-  background-color: rgba(162, 248, 247, 0.595);
+  background-color: rgba(181, 247, 245, 0.595);
 }
 .boardTitle:hover {
   font-weight: bold;

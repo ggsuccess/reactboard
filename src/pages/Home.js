@@ -4,7 +4,7 @@ import axios from 'axios';
 import Header from '../component/Header';
 import BoardList from '../component/BoardList';
 import Pagination from '../component/Pagination';
-import './Page.css';
+import './Home.css';
 // import SearchBoardList from '../component/SearchBoardList';
 // import Pages from '../component/Pages';
 
@@ -155,13 +155,21 @@ const Home = () => {
         searchData.length === 0 ? ( // 검색결과가 없을때
           <h4 style={{ textAlign: 'center' }}>검색결과가 없습니다</h4> // 검색결과가 없음을 알림
         ) : (
-          <BoardList data={currentSearchPosts} currentPage={currentPage} /> //검색결과가 존재할경우 게시글을 BoardList컴포넌트에 전달
+          <BoardList
+            data={currentSearchPosts}
+            currentPage={currentPage}
+            search={search}
+          /> //검색결과가 존재할경우 게시글을 BoardList컴포넌트에 전달
         )
       ) : (
-        <BoardList data={currentPosts} currentPage={currentPage} /> // 검색하지않았을 경우 전체 게시글을 BoardList컴포넌트에 전달
+        <BoardList
+          data={currentPosts}
+          currentPage={currentPage}
+          search={null}
+        /> // 검색하지않았을 경우 전체 게시글을 BoardList컴포넌트에 전달
       )}
       <div style={{ textAlign: 'center' }}>
-        <select onChange={setFilterCategory}>
+        <select className="searchCategory" onChange={setFilterCategory}>
           <option value="전체" selected>
             전체
           </option>
@@ -169,8 +177,10 @@ const Home = () => {
           <option value="정보">정보</option>
           <option value="이슈">이슈</option>
         </select>
-        <select onChange={setSearchCategory}>
-          <option value="작성자">작성자</option>
+        <select className="searchSelect" onChange={setSearchCategory}>
+          <option value="작성자" selected>
+            작성자
+          </option>
           <option value="제목">제목</option>
         </select>
         <input
