@@ -6,8 +6,10 @@ import axios from 'axios';
 const Update = () => {
   const location = useLocation(); //useLocation을 이용하여 navigate로 이동할때 보낸 정보를 받아온다
   const navigate = useNavigate();
+  // console.log(location.state);
   // const { category, title, description } = location.state;
   // const [updateData, setUpdateData] = useState(location.state);
+  localStorage.isReturn = true;
   const [category, setCategory] = useState(location.state.category); /////////////////////////////////////////////////////////////////
   const [title, setTitle] = useState(location.state.title); ///해당 게시글의 카테고리,제목,내용을 받아오고 state값에넣어 수정을 가능하게한다
   const [description, setDescription] = useState(location.state.description); /////////////////////////////////////////////////////////

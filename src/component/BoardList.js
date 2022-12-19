@@ -32,7 +32,7 @@ const BoardList = ({ data, currentPage, search }) => {
                 {!!search ? (
                   <Link
                     className="boardTitle"
-                    style={{ textDecoration: 'none' }}
+                    style={{ textAlign: 'left' }}
                     to={`/read/${item.boardno}`} //게시글 제목을 클릭할 경우 해당 게시글 내용을 볼수 있음
                     state={{
                       // 해당 게시글로 번호,카테고리,제목,내용,작성자정보를 보냄
@@ -45,7 +45,7 @@ const BoardList = ({ data, currentPage, search }) => {
                       search,
                     }}
                   >
-                    <td>{item.title}</td>
+                    <td style={{ textAlign: 'left' }}>{item.title}</td>
                   </Link>
                 ) : (
                   <Link

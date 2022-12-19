@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import Header from '../component/Header';
 import axios from 'axios';
 
 const Write = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const state = location.state;
+  localStorage.isReturn = true;
+  //console.log(state);
   const [writeData, setWriteData] = useState({
     // 작성한 글에 대한 정보를 담을 스테이트
     category: '',
@@ -36,7 +40,7 @@ const Write = () => {
       return { ...prevState, author: e.target.value };
     });
   };
-  const writeBoard = () => {
+  const writeBoard = (item) => {
     // 글쓰기 완료시 db로 insert문을 날리게 되는 함수
     if (
       writeData.category === '' ||
@@ -57,11 +61,11 @@ const Write = () => {
         .post('/boardwrite', writeData) // 글쓰기 완료버튼 누를시 /boardwrite로 writeData라는 작성글 정보를 가지고 쿼리문을 날린다
         .then((res) => console.log(res))
         .catch((err) => console.log(err));
-      navigate('/'); // 쿼리문 날린뒤 홈화면으로 이동
+      navigate('/', { state: item }); // 쿼리문 날린뒤 홈화면으로 이동
     }
   };
-  const backPage = () => {
-    navigate('/');
+  const backPage = (item) => {
+    navigate('/', { state: item });
   };
   return (
     <>
@@ -118,8 +122,8 @@ const Write = () => {
           value={writeData.author}
           onChange={handleAuthor}
         />
-        <button onClick={writeBoard}>완료</button>
-        <button onClick={backPage}>취소</button>
+        <button onClick={() => writeBoard(state)}>완료</button>
+        <button onClick={() => backPage(state)}>취소</button>
       </div>
     </>
   );

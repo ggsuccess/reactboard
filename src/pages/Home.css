@@ -4,12 +4,12 @@
   margin-top: 15px;
 }
 .writeBtn {
-  width: 80px;
-  height: 30px;
+  width: 60px;
+  height: 25px;
   border: 1px solid #bab3ff;
   background-color: #dce6ff;
   border-radius: 7px;
-  font-size: 20px;
+  font-size: 13px;
   margin-left: -202px;
 }
 .writeBtn:hover {
@@ -30,6 +30,9 @@
   width: 300px;
   margin-right: 2px;
   /* border-radius: 7px; */
+}
+.searchBtn {
+  margin: 5px;
 }
 ul {
   list-style: none;

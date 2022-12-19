@@ -23,7 +23,14 @@ th {
   border-bottom: 1px solid rgb(190, 190, 190);
 }
 .boardListTr:hover {
-  background-color: rgba(181, 247, 245, 0.595);
+  background-color: rgba(199, 201, 201, 0.808);
+}
+.boardListTr a {
+  text-align: left !important;
+}
+.boardTitle {
+  text-decoration: none;
+  text-align: left;
 }
 .boardTitle:hover {
   font-weight: bold;

@@ -9,8 +9,13 @@ const Read = () => {
   // const { id } = useParams();
   const location = useLocation();
   const state = location.state; //location.state로 Link태그에 state값으로 보낸 정보를 받을 수 있다.
+  // console.log(state);
+  localStorage.isReturn = true;
   const navigate = useNavigate(); //페이지 이동가능하게 해줌
-  const searchKeyWord = { currentPage: state.currentPage, data: state.search };
+  const searchKeyWord = {
+    currentPage: state.currentPage,
+    data: state.search,
+  };
   // console.log(state); //state.search로 해당 글 검색키워드 카테고리가 들어옴
   const removeBoard = (boardNum) => {
     //게시글 삭제
