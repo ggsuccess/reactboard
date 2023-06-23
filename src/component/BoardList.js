@@ -19,6 +19,7 @@ const BoardList = ({ data, currentPage, search }) => {
             <th>제목</th>
             <th>작성자</th>
             <th>작성일</th>
+            <th>조회</th>
           </tr>
         </thead>
         <tbody>
@@ -70,6 +71,7 @@ const BoardList = ({ data, currentPage, search }) => {
                 <td>
                   {item.date.length > 11 ? item.date.split('T')[0] : item.date}
                 </td>
+                <td>{item.viewcount}</td>
               </tr>
             )
           )}
